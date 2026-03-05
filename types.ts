@@ -4,13 +4,14 @@ export enum Language {
   EN = 'EN',
   DE = 'DE',
   FR = 'FR',
-  ES = 'ES'
+  ES = 'ES',
+  PL = 'PL'
 }
 
 export interface SectionItem {
   id: string;
-  title: Record<Language, string>;
-  description: Record<Language, string>;
+  title: Record<language, string="">;
+  description: Record<language, string="">;
   icon: string;
   link?: string;
   category: 'checkin' | 'checkout' | 'rules' | 'wifi' | 'house' | 'local' | 'transport';
@@ -68,7 +69,7 @@ export interface TranslationSet {
   };
 }
 
-export const TRANSLATIONS: Record<Language, TranslationSet> = {
+export const TRANSLATIONS: Record<language, translationset=""> = {
   [Language.IT]: {
     welcome: "Benvenuti a Nitto House",
     yourHost: "Il tuo Host",
@@ -217,6 +218,36 @@ export const TRANSLATIONS: Record<Language, TranslationSet> = {
       windows: "Cierre todas las ventanas y puertas",
       keys: "Retire la tarjeta blanca y déjela con las llaves en un estante",
       host: "Avise al anfitrión de su salida"
+    }
+  },
+  [Language.PL]: {
+    welcome: "Witamy w Nitto House",
+    yourHost: "Twój Gospodarz",
+    copyWifi: "Kopiuj hasło WiFi",
+    copied: "Skopiowano!",
+    addressCopied: "Adres skopiowany!",
+    getDirections: "Jak dojechać",
+    contactHost: "Skontaktuj się z nami",
+    adminMode: "Tryb Gospodarza",
+    guestView: "Widok Gościa",
+    saveChanges: "Zapisz zmiany",
+    magicPolish: "Popraw z AI",
+    arrival: "Przyjazd",
+    departure: "Wyjazd",
+    checkinInstructions: "Instrukcje zameldowania",
+    checkoutInstructions: "Instrukcje wymeldowania",
+    checkoutChecklist: "Zanim wyjedziesz",
+    msgArriving: "Przyjeżdżam!",
+    msgCheckout: "Wymeldowałem się",
+    msgHelp: "Potrzebuję pomocy",
+    leaveReview: "Zostaw opinię",
+    reviewText: "Podobał Ci się pobyt? Zostaw nam 5 gwiazdek!",
+    checklist: {
+      lights: "Wyłącz wszystkie światła i klimatyzację",
+      belongings: "Nie zapomnij żadnych rzeczy osobistych",
+      windows: "Zamknij wszystkie okna i drzwi",
+      keys: "Wyjmij białą kartę i zostaw ją wraz z kluczami na półce",
+      host: "Powiadom gospodarza o swoim wyjeździe"
     }
   }
 };
